@@ -29,3 +29,9 @@ docker build -t front-ad .
 ### up
 docker run -p 5000:8080 front-ad
 
+### stop
+docker stop elated_hopper
+
+### delete container
+docker rm elated_hopper
+
