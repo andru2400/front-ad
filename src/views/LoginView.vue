@@ -9,7 +9,7 @@
 
         <div v-if="token !== ''">
             <h3 v-text="'Token = '+token"></h3>
-            <button type="submit" @click="submit">
+            <button type="submit" @click="logout">
                 Logout
             </button>
         </div>    
@@ -119,8 +119,11 @@ export default {
                     })
         },
         logout() {             
-            let e = this;          
-            axios.get(this.urlConnection+'api/login')
+            let e = this;     
+            const config = {
+                headers: { Authorization: `Bearer ${this.token}` }
+            };     
+            axios.get(this.urlConnection+'api/logout', config)
                     .then(function (response){                        
                         if(response.data.status == 1){                                                                                
                             e.form.email    = '';
