@@ -128,7 +128,7 @@ export default {
                         if(response.data.status == 1){                                                                                
                             e.form.email    = '';
                             e.form.password = '';
-                            e.form.token    = '';
+                            e.token    = '';
                             e.error = '';
                         } else if(response.data.status == 0) {
                             e.error = response.data
